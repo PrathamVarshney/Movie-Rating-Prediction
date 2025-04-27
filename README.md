@@ -1,82 +1,113 @@
-Movie Rating Prediction using IMDb Movies Dataset
-This project uses machine learning techniques to predict movie ratings based on various features from the IMDb Movies India dataset. The primary goal of this project is to predict the rating of a movie using different movie attributes such as genre, director, actors, duration, and votes.
+# 🎬 **Movie Rating Prediction using IMDb Movies Dataset**
 
-Table of Contents
-Project Description
-Technologies Used
-Dataset
-Steps Involved
-Model Evaluation
-Running the Code
+This project leverages machine learning techniques to predict movie ratings based on various features from the **IMDb Movies India** dataset. The goal is to predict the rating of a movie based on attributes like genre, director, actors, duration, and votes.
 
-Project Description
-This project processes and analyzes the IMDb Movies India dataset to predict movie ratings using a Random Forest Regressor model. The dataset includes various columns, such as the movie's genre, director, actors, votes, and other features. By training a machine learning model on this data, we aim to predict the rating of a movie based on the input features.
+---
 
-Key features in the dataset are:
-Genre
-Director
-Actors
-Duration
-Votes
-Year of release
+## 📋 **Table of Contents**
+1. [Project Description]
+2. [Technologies Used]
+3. [Dataset]
+4. [Steps Involved]
+5. [Model Evaluation]
+6. [Running the Code]
 
-Technologies Used
-Python: Programming language used for data analysis and model building.
-pandas: Data manipulation and analysis library.
-NumPy: Library for numerical operations.
-Matplotlib & Seaborn: Data visualization libraries.
-Scikit-learn: Library for machine learning, used for splitting the dataset, encoding categorical variables, and training the Random Forest Regressor model.
+---
 
-Dataset
-The dataset used in this project is named IMDb Movies India.csv, which contains information about various movies such as their ratings, genre, director, actors, and other relevant details. The dataset has been preprocessed to handle missing values and to encode categorical features.
+## 📜 **Project Description**
+In this project, we explore the **IMDb Movies India dataset** and train a **Random Forest Regressor** model to predict movie ratings. The dataset contains various attributes, such as movie genre, director, actors, duration, and votes. The model's performance is evaluated using common regression metrics.
 
-Key Columns in the Dataset:
-Name: Name of the movie
-Year: Year of movie release
-Genre: Genre of the movie
-Director: Director of the movie
-Actor 1, Actor 2, Actor 3: Main actors in the movie
-Votes: Number of votes received for the movie
-Duration: Duration of the movie in minutes
-Rating: Rating of the movie (target variable)
+**Objective**: Predict movie ratings based on the movie's features.
 
-Steps Involved
-Data Loading and Exploration:
-The dataset is loaded using pandas.
-Basic data exploration is performed to examine the first few rows, column names, missing values, and summary statistics.
+### Key Features:
+- **Genre**: Genre of the movie (e.g., Comedy, Drama)
+- **Director**: Director of the movie
+- **Actor 1, Actor 2, Actor 3**: Main actors
+- **Duration**: Duration of the movie in minutes
+- **Votes**: Number of votes received
+- **Year**: Release year of the movie
+- **Rating**: Movie rating (target variable)
 
-Data Preprocessing:
-Missing values are handled by filling them with the median for numerical columns and 'Unknown' for categorical columns.
-The 'Year' column is cleaned to extract only the year, and all numeric columns like 'Votes' and 'Duration' are converted to numeric values.
+---
 
-Feature Engineering: Additional features are created, such as:
-Director_Success: The average rating of movies by each director.
-Genre_Avg_Rating: The average rating of movies in each genre.
+## 🛠️ **Technologies Used**
+- **Python**: The programming language used for data processing and model building.
+- **pandas**: For data manipulation and analysis.
+- **NumPy**: For numerical operations and handling arrays.
+- **Matplotlib & Seaborn**: For data visualization.
+- **Scikit-learn**: For machine learning, including model building and evaluation.
 
-Label Encoding: Categorical columns such as Genre, Director, and Actors are label-encoded using Scikit-learn's LabelEncoder.
+---
 
-Model Building:
-The dataset is split into training and testing sets.
-A Random Forest Regressor model is trained on the training set to predict movie ratings.
+## 📊 **Dataset**
+The **IMDb Movies India dataset** (CSV file) contains detailed information about movies, such as ratings, genres, directors, actors, and other metadata. The dataset undergoes preprocessing to handle missing values, encode categorical variables, and create additional features.
 
-Model Evaluation: The model's performance is evaluated using metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² score.
-Model Evaluation
-The model is evaluated using the following metrics:
-Mean Absolute Error (MAE): Measures the average magnitude of errors in predictions.
-Root Mean Squared Error (RMSE): Measures the square root of the average squared differences between the predicted and actual values.
-R² Score: Represents the proportion of the variance in the target variable that is explained by the model.
+**Columns in the Dataset**:
+- `Name`: Movie name
+- `Year`: Release year
+- `Genre`: Genre of the movie
+- `Director`: Director of the movie
+- `Actor 1`, `Actor 2`, `Actor 3`: Main actors
+- `Votes`: Number of votes
+- `Duration`: Movie duration (in minutes)
+- `Rating`: Movie rating (target variable)
 
-Here is an example of the evaluation results:
-Random Forest Mean Absolute Error (MAE): 0.33
-Random Forest Root Mean Squared Error (RMSE): 0.61
-Random Forest R² Score: 0.62
+---
 
-Clone the repository or download the dataset and save it as IMDb Movies India.csv in your working directory.
+## 🔄 **Steps Involved**
 
-Install the required Python libraries:
-pip install pandas numpy matplotlib seaborn scikit-learn
-Run the Python script to perform data preprocessing, train the model, and evaluate its performance.
-python movie_rating_prediction.py
+1. **Data Loading & Exploration**:
+   - Load the dataset using `pandas`.
+   - Perform basic exploration: preview the first few rows, check column names, find missing values, and compute summary statistics.
 
-Conclusion
-This project demonstrates how to preprocess a dataset, build a machine learning model, and evaluate its performance. The Random Forest Regressor model can be improved by fine-tuning hyperparameters or using more sophisticated models such as XGBoost or neural networks.
+2. **Data Preprocessing**:
+   - Handle missing values by filling them with the median for numerical columns and "Unknown" for categorical columns.
+   - Clean the `Year` column to extract only the year value, and convert all numeric columns to their appropriate types.
+
+3. **Feature Engineering**:
+   - Create additional features such as:
+     - `Director_Success`: Average rating of movies by each director.
+     - `Genre_Avg_Rating`: Average rating of movies in each genre.
+
+4. **Label Encoding**:
+   - Encode categorical features (e.g., `Genre`, `Director`, `Actor 1`, `Actor 2`, `Actor 3`) using `LabelEncoder` from Scikit-learn.
+
+5. **Model Building**:
+   - Split the data into training and testing sets (80% for training, 20% for testing).
+   - Train a **Random Forest Regressor** model on the training data.
+
+6. **Model Evaluation**:
+   - Evaluate the model using **Mean Absolute Error (MAE)**, **Root Mean Squared Error (RMSE)**, and **R² Score**.
+
+---
+
+## 📊 **Model Evaluation**
+
+The model's performance is evaluated with the following metrics:
+- **Mean Absolute Error (MAE)**: The average of absolute differences between actual and predicted values.
+- **Root Mean Squared Error (RMSE)**: The square root of the average of squared differences between actual and predicted values.
+- **R² Score**: Indicates the proportion of variance in the target variable that the model can explain.
+
+**Example Output**:
+--**Random Forest Mean Absolute Error (MAE): 0.33
+--**Random Forest Root Mean Squared Error (RMSE): 0.61
+--**Random Forest R² Score: 0.62
+
+---
+
+## ⚡ **Running the Code**
+
+### 1. **Clone the Repository** or Download the dataset:
+   - Save the **IMDb Movies India.csv** file in your working directory.
+
+### 2. **Install Required Libraries**:
+   Run the following command to install the necessary libraries:
+   pip install pandas numpy matplotlib seaborn scikit-learn
+
+### python movie_rating_prediction.py
+
+## 🏆 Conclusion
+This project demonstrates how to:
+--**Preprocess data, handle missing values, and engineer features.
+--**Build and train a Random Forest Regressor model for movie rating prediction.
+--**Evaluate the model's performance using common regression metrics.
